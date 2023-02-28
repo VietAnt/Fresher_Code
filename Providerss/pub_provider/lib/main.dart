@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:pub_provider/state.dart';
 
 void main() {
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(create: (_) => Counter()),
-    ],
-    child: MyApp(),
-  ));
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => Counter()),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 //Todo: Provider
@@ -86,6 +87,10 @@ class MyWidget extends StatelessWidget {
       ),
       body: Center(
         child: Text('${context.watch<Counter>().count}'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => context.read<Counter>().increment(),
+        child: const Icon(Icons.add),
       ),
     );
   }

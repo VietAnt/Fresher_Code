@@ -1,5 +1,4 @@
 import 'package:counter_provider/provider/theme_provider.dart';
-import 'package:counter_provider/screens/counter_page.dart';
 import 'package:counter_provider/provider/count_provider.dart';
 import 'package:counter_provider/screens/home.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
         final provider = Provider.of<ThemeProvider>(context);
         return MaterialApp(
           theme: provider.theme,
-          home: const HomePage(),
+          home: HomePage(),
         );
       },
     );
