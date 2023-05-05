@@ -219,36 +219,37 @@ class _HomeViewState extends State<HomeView> {
       height: 35.0,
       margin: EdgeInsets.only(top: 16),
       child: ListView.builder(
-          itemCount: categoriesController.categories.length,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) => Obx(
-                () => InkWell(
-                  onTap: () {
-                    categoriesController.changeCategories(index);
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(right: 8),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4.0),
-                      color: index == categoriesController.currentIndex.value
-                          ? Colors.black87
-                          : Colors.transparent,
-                    ),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 16.0,
-                      vertical: 8.0,
-                    ),
-                    child: Text(
-                      categoriesController.categories[index],
-                      style: TextStyle(
-                        color: index == categoriesController.currentIndex.value
-                            ? Colors.white
-                            : Colors.black,
-                      ),
-                    ),
-                  ),
+        itemCount: categoriesController.categories.length,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) => Obx(
+          () => InkWell(
+            onTap: () {
+              categoriesController.changeCategories(index);
+            },
+            child: Container(
+              margin: EdgeInsets.only(right: 8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4.0),
+                color: index == categoriesController.currentIndex.value
+                    ? Colors.black87
+                    : Colors.transparent,
+              ),
+              padding: EdgeInsets.symmetric(
+                horizontal: 16.0,
+                vertical: 8.0,
+              ),
+              child: Text(
+                categoriesController.categories[index],
+                style: TextStyle(
+                  color: index == categoriesController.currentIndex.value
+                      ? Colors.white
+                      : Colors.black,
                 ),
-              )),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 
@@ -266,18 +267,18 @@ class _HomeViewState extends State<HomeView> {
       actions: [
         IconButton(onPressed: () {}, icon: Icon(Icons.search)),
         IconButton(
-            onPressed: () {
-              authController.logout();
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (_) => SplashScreen()),
-              );
-            },
-            icon: Icon(Icons.logout_outlined)),
+          onPressed: () {
+            authController.logout();
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (_) => SplashScreen()),
+            );
+          },
+          icon: Icon(Icons.logout_outlined),
+        ),
         IconButton(
             onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => CartPage(),
-              ));
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => CartPage()));
             },
             icon: Icon(Icons.shopping_cart_outlined)),
       ],

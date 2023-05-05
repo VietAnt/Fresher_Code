@@ -23,14 +23,12 @@ void main(List<String> arguments) {
   } catch (e) {
     print(e);
   }
-
   try {
     kiemTraTuoi(-8);
   } catch (e) {
     print(e);
   }
   //kiemTraTuoi(-8);
-
   print("Kiểm tra tuổi kết thúc");
 }
 

@@ -89,8 +89,9 @@ class _LoginPageState extends State<LoginPage> {
                                 const EdgeInsets.symmetric(horizontal: 4.0),
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                  padding: EdgeInsetsDirectional.all(18),
-                                  primary: kcPrimaryColor),
+                                padding: EdgeInsetsDirectional.all(18),
+                                backgroundColor: kcPrimaryColor,
+                              ),
                               onPressed: () {
                                 if (_formKey.currentState!.validate()) {
                                   var result = authController.login(

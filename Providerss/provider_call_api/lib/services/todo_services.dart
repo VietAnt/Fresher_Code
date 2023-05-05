@@ -23,7 +23,7 @@ class TodoService {
           .toList();
       return todos;
     }
-    return [];
+    return []; //mang_rong_ko_ket_noi_dc
     //throw "Something went wrong";
   }
 }

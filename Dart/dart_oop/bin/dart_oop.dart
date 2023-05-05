@@ -44,7 +44,6 @@ void main(List<String> arguments) {
   XeTai xeTai = XeTai(xeTaiBrand: "HuynDai", xeTaiYear: 1987);
   print(xeTai.brand);
   xeTai.printAge();
-
   xeTai.chuyenCho();
 
   // Class con sẽ sử dụng được các thuộc tính, phương thức public của cha.

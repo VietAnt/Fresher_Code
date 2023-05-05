@@ -10,3 +10,15 @@ class CategoriesRepository {
     return categoriesJson;
   }
 }
+
+//*-->CategoriesRepository
+class RepositoryCategorie {
+  var url = "https://fakestoreapi.com/products/categories";
+
+  //*-->loadCategoriesFromAPI
+  loadCategorieFromApi() async {
+    var response = await http.get(Uri.parse(url));
+    var categoriesJson = json.decode(response.body);
+    return categoriesJson;
+  }
+}

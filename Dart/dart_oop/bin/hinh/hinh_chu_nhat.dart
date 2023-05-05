@@ -1,27 +1,31 @@
-class HinhChuNhat{
+class HinhChuNhat {
+  double? chieuDai;
+  double? chieuRong;
 
-double? chieuDai;
-double? chieuRong; 
+  HinhChuNhat({required this.chieuDai, required this.chieuRong});
 
-HinhChuNhat({required this.chieuDai, required this.chieuRong});
+  double tinhChuVi() {
+    return (this.chieuDai! + this.chieuRong!) * 2;
+  }
 
-double tinhChuVi(){
- return (this.chieuDai! + this.chieuRong!) * 2; 
-}
+  double tinhDienTich() {
+    return this.chieuDai! * this.chieuRong!;
+  }
 
-double tinhDienTich(){
-  return this.chieuDai! * this.chieuRong! ;
-}
-
-void getInfor (){
-  print(
-    "Chiều dài:" + this.chieuDai.toString() + "\n" + 
-    "Chiều rộng:" + this.chieuRong.toString() + "\n" + 
-    "Chu vi" + this.tinhChuVi().toString() + "\n" + 
-    "Diện tích" + this.tinhDienTich().toString() + "\n"
-  
-  );
-}
-
-
+  void getInfor() {
+    print(
+        // ignore: prefer_interpolation_to_compose_strings
+        "Chiều dài:" +
+            this.chieuDai.toString() +
+            "\n" +
+            "Chiều rộng:" +
+            this.chieuRong.toString() +
+            "\n" +
+            "Chu vi" +
+            this.tinhChuVi().toString() +
+            "\n" +
+            "Diện tích" +
+            this.tinhDienTich().toString() +
+            "\n");
+  }
 }
